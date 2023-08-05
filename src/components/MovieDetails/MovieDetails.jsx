@@ -1,26 +1,38 @@
 import { getDetailsFilm } from "API/filmsApi"
-import { useCallback, useEffect, useState,  } from "react"
+import { useCallback,  useEffect, useState,  } from "react"
 import {  Outlet, useLocation, useNavigate, useParams } from "react-router-dom"
 import { BoxDetails, ImgDetails, BoxDetailsPhotoText, BoxDetailsText, DetailsText, ArrowBck, ButtonBck} from "./MovieDetails-style";
+// import { IdFilmContext } from "pages/MovieDetailsPage/MovieDetailsPage";
 
 const BASE_URL_IMG = 'https://image.tmdb.org/t/p/w500';
 const DEFAULT_URL_IMG = 'https://placehold.co/600x400?font=roboto';
 
 export const MovieDetails = () => {
+
 const [filmDetails, setFilmDetails] = useState([])
+
+
 const navigate = useNavigate()
+
 const location = useLocation();
 
-const {movieId} = useParams()
-const Id =  movieId.split('')
-const newId = Id.slice(1, 100).join('');
 
-console.log(newId)
+const {movieId} = useParams()
+// console.log(movieId)
+
+
+
+
+// const IdFilm = useContext(IdFilmContext)
+// IdFilm.func(movieId)
+// console.log(IdFilm)
+
+
 
 const getFilm = useCallback( async () => {
 
   try {
-    const data = await getDetailsFilm(newId)
+    const data = await getDetailsFilm(movieId)
     setFilmDetails(data)
   } catch (error) {
     console.log(error)
@@ -38,9 +50,10 @@ if (filmDetails) {
 
 const handleBackBtn = () =>{
     navigate(location.state)
+    console.log(location.state)
 }
 const {original_title, poster_path, vote_average, overview, genres} = filmDetails
-console.log(filmDetails)
+// console.log(filmDetails)
   return (
     <>
     <BoxDetails>

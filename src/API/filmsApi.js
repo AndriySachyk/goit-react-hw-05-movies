@@ -18,6 +18,14 @@ export const getDetailsFilm = async(id)=>{
 }
 
 
+export const getCastFilm = async(id)=>{
+    const {data} = await axios.get(`movie/${id}/credits?api_key=${API_KEY}&language=en-US`);
+    return data;
+}
 
+export const getReviews = async(id)=>{
+    const {data} = await axios.get(`movie/${id}/reviews?api_key=${API_KEY}&language=en-US`);
+    return data;
+}
 
 

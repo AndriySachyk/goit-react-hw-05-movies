@@ -11,7 +11,7 @@ export const Home = ({trending}) => {
   return (
     <ContainerFilms>
       <ListFilms>
-         {trending.map((film)=> <li key={film.id}><LinkFilms to={`movies/:${film.id}`} state={location}>{film.original_title}</LinkFilms></li>)}
+         {trending.map((film)=> <li key={film.id}><LinkFilms to={`movies/${film.id}`} state={location}>{film.original_title}</LinkFilms></li>)}
       </ListFilms>
     </ContainerFilms>
   )
