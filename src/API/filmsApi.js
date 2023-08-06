@@ -29,3 +29,10 @@ export const getReviews = async(id)=>{
 }
 
 
+export const getFilmsBySearch = async query => {
+    const {data} = await axios.get(`search/movie?api_key=${API_KEY}&query=${query}`
+    );
+    return data.results;
+  };
+
+

@@ -50,7 +50,7 @@ if (filmDetails) {
 
 const handleBackBtn = () =>{
     navigate(location.state)
-    console.log(location.state)
+    // console.log(location.state)
 }
 const {original_title, poster_path, vote_average, overview, genres} = filmDetails
 // console.log(filmDetails)

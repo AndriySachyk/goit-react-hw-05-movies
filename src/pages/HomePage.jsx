@@ -14,7 +14,7 @@ const getFilms = useCallback(async () => {
 
   try {
     const data = await getTrendingFilms()
-    console.log(data.results)
+    // console.log(data.results)
     setTrending(data.results)
   } catch (error) {
     console.log(error)

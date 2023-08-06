@@ -13,8 +13,8 @@ export const MovieDetailsPage = () => {
   // const [idFilm, setIdFilm] = useState()
   const location = useLocation();
   const params = useParams();
-  console.log(params)
-  console.log(location)
+  // console.log(params)
+  // console.log(location)
 
   return (
     

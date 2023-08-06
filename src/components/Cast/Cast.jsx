@@ -12,7 +12,7 @@ export const Cast = () => {
 
 const [filmCast, setFilmCast] = useState([])
 const params= useParams();
-console.log(params)
+// console.log(params)
   // const {id} = useContext(IdFilmContext);
 
 
@@ -21,7 +21,7 @@ console.log(params)
 
     try {
       const data = await getCastFilm(params.movieId)
-      console.log(data.cast)
+      // console.log(data.cast)
       setFilmCast(data.cast)
     } catch (error) {
       console.log(error)
@@ -37,7 +37,7 @@ console.log(params)
    // eslint-disable-next-line
   },[ ])
 
-  console.log(filmCast)
+  // console.log(filmCast)
   return (
     <BoxCast>
       <ListCast>
