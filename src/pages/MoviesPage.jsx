@@ -4,14 +4,13 @@ import { MoviesList } from 'components/MoviesList/MoviesList';
 import { useEffect, useRef, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 
-export const MoviesPage = () => {
+const MoviesPage = () => {
 
   const [films, setFilms] = useState([]);
   const [searchParams, setSearchParams ] = useSearchParams()
 
   const searchValue = searchParams.get('search') || ''
 
-  // console.log(searchValue)
   const firstRender = useRef(true)
 
   const handleSearch = async (query) => {
@@ -33,7 +32,6 @@ export const MoviesPage = () => {
 		!searchValue && setSearchParams({})
 	}, [searchValue, setSearchParams])
 
-// console.log(films)
   return (
     <>
       <Movies 
@@ -46,3 +44,6 @@ export const MoviesPage = () => {
     </>
   )
 }
+
+
+export default MoviesPage

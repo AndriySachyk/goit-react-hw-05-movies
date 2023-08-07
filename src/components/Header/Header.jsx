@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 
 import { HeaderPage, StyledLink, StyledNav,  } from './Header-style'
 import { Outlet } from 'react-router-dom'
 
-export const Header = () => {
+const Header = () => {
   return (
         <>
           <HeaderPage>
@@ -12,7 +12,10 @@ export const Header = () => {
               <StyledLink to='movies' >Movies</StyledLink>
             </StyledNav>
           </HeaderPage>
-        <Outlet />
+        <Suspense>
+          <Outlet />
+        </Suspense>
         </>
   )
 }
+export default Header

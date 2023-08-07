@@ -3,18 +3,14 @@ import { MovieDetails } from 'components/MovieDetails/MovieDetails'
 import { Reviews } from 'components/Reviews/Reviews';
 import {  useLocation, useParams, } from 'react-router-dom'
 import { BoxLinks, ContainerLinks, Links, TitleLinks } from './MovieDetailsPage-style';
-// import { useState } from 'react'
 
 
 
 
-export const MovieDetailsPage = () => {
+const MovieDetailsPage = () => {
 
-  // const [idFilm, setIdFilm] = useState()
   const location = useLocation();
   const params = useParams();
-  // console.log(params)
-  // console.log(location)
 
   return (
     
@@ -33,3 +29,5 @@ export const MovieDetailsPage = () => {
     
   )
 }
+
+export default MovieDetailsPage

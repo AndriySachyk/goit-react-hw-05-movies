@@ -1,8 +1,15 @@
-import { HomePage } from "pages/HomePage";
-import { MovieDetailsPage } from "pages/MovieDetailsPage/MovieDetailsPage";
-import { MoviesPage } from "pages/MoviesPage";
+// import { HomePage } from "pages/HomePage";
+// import { MovieDetailsPage } from "pages/MovieDetailsPage/MovieDetailsPage";
+// import { MoviesPage } from "pages/MoviesPage";
+// import { Header } from "./Header/Header";
+import { lazy } from "react";
 import { Route, Routes } from "react-router-dom";
-import { Header } from "./Header/Header";
+
+
+const HomePage = lazy(()=> import('../pages/HomePage'))
+const MoviesPage = lazy(()=> import('../pages/MoviesPage'))
+const Header = lazy(()=> import('./Header/Header'))
+const MovieDetailsPage = lazy(()=> import('../pages/MovieDetailsPage/MovieDetailsPage'))
 
 export const App = () => {
   return (
@@ -15,7 +22,6 @@ export const App = () => {
           <Route path='movies/:movieId/cast' element={<MovieDetailsPage />} />
           <Route path='movies/:movieId/reviews' element={<MovieDetailsPage />} />
         </Route>
-        {/* <Route path='*' element={<ErrorPage />} /> */}
     </Routes>
    </>
   );

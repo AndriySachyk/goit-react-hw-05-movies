@@ -1,8 +1,7 @@
 import { getDetailsFilm } from "API/filmsApi"
 import { useCallback,  useEffect, useState,  } from "react"
-import {  Outlet, useLocation, useNavigate, useParams } from "react-router-dom"
+import {  useLocation, useNavigate, useParams } from "react-router-dom"
 import { BoxDetails, ImgDetails, BoxDetailsPhotoText, BoxDetailsText, DetailsText, ArrowBck, ButtonBck} from "./MovieDetails-style";
-// import { IdFilmContext } from "pages/MovieDetailsPage/MovieDetailsPage";
 
 const BASE_URL_IMG = 'https://image.tmdb.org/t/p/w500';
 const DEFAULT_URL_IMG = 'https://placehold.co/600x400?font=roboto';
@@ -18,15 +17,6 @@ const location = useLocation();
 
 
 const {movieId} = useParams()
-// console.log(movieId)
-
-
-
-
-// const IdFilm = useContext(IdFilmContext)
-// IdFilm.func(movieId)
-// console.log(IdFilm)
-
 
 
 const getFilm = useCallback( async () => {
@@ -50,10 +40,8 @@ if (filmDetails) {
 
 const handleBackBtn = () =>{
     navigate(location.state)
-    // console.log(location.state)
 }
 const {original_title, poster_path, vote_average, overview, genres} = filmDetails
-// console.log(filmDetails)
   return (
     <>
     <BoxDetails>
@@ -80,7 +68,6 @@ const {original_title, poster_path, vote_average, overview, genres} = filmDetail
       </BoxDetailsPhotoText>
       
     </BoxDetails>
-    <Outlet />
   </>
   )
 }

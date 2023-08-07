@@ -1,13 +1,10 @@
-// import { useState } from "react"
 import PropTypes  from 'prop-types';
-// import { Link } from "react-router-dom"
 import { useLocation } from "react-router-dom"
 import { ListFilms, ContainerFilms, LinkFilms} from "./Home-style"
 
-export const Home = ({trending}) => {
+const Home = ({trending}) => {
     const location = useLocation();
 
-    // console.log(location)
   return (
     <ContainerFilms>
       <ListFilms>
@@ -22,3 +19,6 @@ Home.propTypes = {
     PropTypes.shape({ id: PropTypes.number.isRequired,  original_title: PropTypes.string.isRequired})
   )
 }
+
+
+export default Home

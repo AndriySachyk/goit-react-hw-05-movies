@@ -1,15 +1,11 @@
-// import { useState } from "react"
 import PropTypes  from 'prop-types';
 
 import { ContainerFilms, LinkFilms, ListFilms } from "components/Home/Home-style"
 import { useLocation } from "react-router-dom"
 
 export const MoviesList = ({films}) => {
-    // const [filmsList, setFilmsList] = useState([])
-    // setFilmsList(films.map((film)=> film))
     const location = useLocation();
     const FilmList = films
-    // console.log(FilmList)
   return (
       <ContainerFilms>
             <ListFilms>

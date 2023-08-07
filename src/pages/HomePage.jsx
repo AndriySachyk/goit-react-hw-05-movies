@@ -1,9 +1,6 @@
-// import { Home } from 'components/Home/Home'
-// import  { useState } from 'react'
-// import Notiflix from 'notiflix';
 
 import { getTrendingFilms } from "API/filmsApi";
-import { Home } from "components/Home/Home";
+import  Home  from "components/Home/Home";
 import { useCallback, useEffect, useState } from "react"
 
 export const HomePage = () => {
@@ -14,7 +11,6 @@ const getFilms = useCallback(async () => {
 
   try {
     const data = await getTrendingFilms()
-    // console.log(data.results)
     setTrending(data.results)
   } catch (error) {
     console.log(error)
@@ -35,3 +31,5 @@ useEffect(() => {
     
   )
 }
+
+export default HomePage

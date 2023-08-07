@@ -1,5 +1,4 @@
 import PropTypes  from 'prop-types';
-import { Outlet } from "react-router-dom"
 import { BoxForm, ButtonForm, FormMovies, InputForm } from "./Movies-style"
 
 export const Movies = ({setSearchParams, searchValue, handleSearch, firstRender}) => {
@@ -29,7 +28,6 @@ export const Movies = ({setSearchParams, searchValue, handleSearch, firstRender}
           <ButtonForm type="submit">Search</ButtonForm>
         </FormMovies>
       </BoxForm>
-      <Outlet />
     </>
   )
 }
