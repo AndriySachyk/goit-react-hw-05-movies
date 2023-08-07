@@ -3,7 +3,8 @@ import  { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { BoxReviews, ListReviews, TextReviews, TitleErrorReviews, TitleReviews } from './Reviews-style';
 
-export const Reviews = () => {
+
+const Reviews = () => {
   const [reviews, setReviews] = useState([]);
   const {movieId} = useParams();
 
@@ -32,3 +33,6 @@ export const Reviews = () => {
     </BoxReviews>
   );
 }
+
+
+export default Reviews

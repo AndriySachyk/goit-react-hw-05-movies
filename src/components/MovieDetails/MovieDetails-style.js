@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { styled } from "styled-components";
 
 
@@ -43,12 +44,12 @@ export const ArrowBck = styled.span`
     
     `
 
-export const ButtonBck = styled.button`
+export const LinkBck = styled(Link)`
     width: 170px;
     height:auto;
     padding: 10px 25px;
     display: flex;
-    
+    text-decoration: none;
     align-items: center;
     gap: 10px;
     background-color: rgba(0,0,0,0);
@@ -56,6 +57,7 @@ export const ButtonBck = styled.button`
     outline: none;
     font-size: 21px;
     font-weight: 500;
+    color: #272727;
     
     &:hover{
         color: #CD0005;

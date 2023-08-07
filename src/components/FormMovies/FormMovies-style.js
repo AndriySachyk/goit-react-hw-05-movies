@@ -8,7 +8,7 @@ export const BoxForm = styled.div`
     align-items: center;
     
     `
-export const FormMovies = styled.form`
+export const FormSearch = styled.form`
     display: flex;
     gap: 25px;
     height: 35px;

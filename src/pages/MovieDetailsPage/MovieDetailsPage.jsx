@@ -1,16 +1,15 @@
-import { Cast } from 'components/Cast/Cast';
 import { MovieDetails } from 'components/MovieDetails/MovieDetails'
-import { Reviews } from 'components/Reviews/Reviews';
-import {  useLocation, useParams, } from 'react-router-dom'
+import {  Outlet, useLocation,   } from 'react-router-dom'
 import { BoxLinks, ContainerLinks, Links, TitleLinks } from './MovieDetailsPage-style';
+import { Suspense } from 'react';
 
+import { TailSpin } from  'react-loader-spinner'
 
 
 
 const MovieDetailsPage = () => {
 
-  const location = useLocation();
-  const params = useParams();
+const location = useLocation();
 
   return (
     
@@ -19,12 +18,23 @@ const MovieDetailsPage = () => {
         <BoxLinks>
           <TitleLinks>Additional information</TitleLinks>
           <ContainerLinks>
-            <Links to={`/movies/${params.movieId}/cast`} state={location}>Cast</Links>
-            <Links to={`/movies/${params.movieId}/reviews`} state={location}>Reviews</Links>
+            <Links to={`cast`} state={{ from: location }}>Cast</Links>
+            <Links to={`reviews`}state={{ from: location }} >Reviews</Links>
           </ContainerLinks>
         </BoxLinks>
-          {location.pathname.includes('cast') && <Cast />}
-          {location.pathname.includes('reviews') && <Reviews/>}
+        <Suspense fallback={<TailSpin
+  height="80"
+  width="80"
+  color="#CD0005"
+  ariaLabel="tail-spin-loading"
+  radius="1"
+  wrapperStyle={{}}
+  wrapperClass=""
+  visible={true}
+/>}>
+          
+          <Outlet />
+        </Suspense>
       </>
     
   )

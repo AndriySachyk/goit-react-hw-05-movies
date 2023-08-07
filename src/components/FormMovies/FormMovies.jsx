@@ -1,7 +1,7 @@
 import PropTypes  from 'prop-types';
-import { BoxForm, ButtonForm, FormMovies, InputForm } from "./Movies-style"
+import { BoxForm, ButtonForm, FormSearch, InputForm } from "./FormMovies-style"
 
-export const Movies = ({setSearchParams, searchValue, handleSearch, firstRender}) => {
+export const FormMovies = ({setSearchParams, searchValue, handleSearch, firstRender}) => {
 
   
   const handleChange= ({target:{value}})=>{
@@ -18,7 +18,7 @@ export const Movies = ({setSearchParams, searchValue, handleSearch, firstRender}
   return (
     <>
       <BoxForm>
-        <FormMovies onSubmit={handleSubmit}>
+        <FormSearch onSubmit={handleSubmit}>
           <InputForm type="search"
           name="search"
           placeholder="Search"
@@ -26,14 +26,14 @@ export const Movies = ({setSearchParams, searchValue, handleSearch, firstRender}
           onChange={handleChange}
           value={searchValue} />
           <ButtonForm type="submit">Search</ButtonForm>
-        </FormMovies>
+        </FormSearch>
       </BoxForm>
     </>
   )
 }
 
 
-Movies.propTypes = {
+FormMovies.propTypes = {
   setSearchParams: PropTypes.func.isRequired,
   searchValue: PropTypes.string.isRequired,
   handleSearch: PropTypes.func.isRequired,

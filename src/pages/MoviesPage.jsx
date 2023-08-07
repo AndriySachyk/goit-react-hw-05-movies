@@ -1,5 +1,5 @@
 import { getFilmsBySearch } from 'API/filmsApi';
-import { Movies } from 'components/Movies/Movies'
+import { FormMovies, } from 'components/FormMovies/FormMovies'
 import { MoviesList } from 'components/MoviesList/MoviesList';
 import { useEffect, useRef, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
@@ -34,7 +34,7 @@ const MoviesPage = () => {
 
   return (
     <>
-      <Movies 
+      <FormMovies 
         setSearchParams={setSearchParams}
         searchValue={searchValue}
         handleSearch={handleSearch}

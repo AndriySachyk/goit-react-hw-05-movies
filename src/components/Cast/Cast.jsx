@@ -7,7 +7,10 @@ import { useParams } from 'react-router-dom';
 
 const BASE_URL_IMG = 'https://image.tmdb.org/t/p/w500';
 const DEFAULT_URL_IMG = 'https://placehold.co/600x400?font=roboto';
-export const Cast = () => {
+
+
+
+const Cast = () => {
 
 const [filmCast, setFilmCast] = useState([])
 const params= useParams();
@@ -48,3 +51,6 @@ const params= useParams();
     </BoxCast>
   )
 }
+
+
+export default Cast
